@@ -1785,7 +1785,7 @@ input, select, textarea {
 	}
 
 	header.major h2 {
-		color: #DAF7A6;
+		color: #F39C12;
 		font-size: 3.5em;
 	}
 
@@ -2789,7 +2789,7 @@ input, select, textarea {
 			}
 
 				#header > nav ul li {
-					border-top: solid 2px #5ccfb1;
+					border-top: solid 2px #000000;
 					display: block;
 					padding: 0;
 				}

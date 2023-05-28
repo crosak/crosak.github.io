@@ -2710,8 +2710,8 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background:#DAF7A6;
-		color: #DAF7A6;
+		background: #0B3C5D;
+   		color: #D9B310;
 		height: 100%;
 		overflow-y: auto;
 		position: fixed;
@@ -2722,23 +2722,23 @@ input, select, textarea {
 	}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #000000;
+			color: #D9B310;
 		}
 
 			#header h1 a, #header h2 a, #header h3 a, #header h4 a, #header h5 a, #header h6 a {
-				color: #000000;
+				color: #D9B310;
 			}
 
 		#header header p {
-			color: #b7eadc;
+			color: #D9E021;
 		}
 
 		#header a {
-			color: #d2f2e9;
+			color: #D9E021;
 		}
 
 			#header a:hover {
-				color: #000000 !important;
+				color: #D9B310 !important;
 			}
 
 		#header > header {
@@ -2770,6 +2770,7 @@ input, select, textarea {
 			-moz-flex-shrink: 0;
 			-webkit-flex-shrink: 0;
 			-ms-flex-shrink: 0;
+			color: #D9E021;
 			flex-shrink: 0;
 			bottom: 0;
 			left: 0;
@@ -2810,15 +2811,15 @@ input, select, textarea {
 						-ms-transition: none;
 						transition: none;
 						border: 0;
-						color: #000000 !important;
+						color: #D9B310 !important;
 						display: block;
 						padding: 0.85em 0;
 						text-decoration: none;
 					}
 
 						#header > nav ul li a.active {
-							background: #fff;
-							color: #DAF7A6 !important;
+							background: #328CC1;
+							color: #D9B310 !important;
 						}
 
 					#header > nav ul li:first-child {

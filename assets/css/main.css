@@ -1707,50 +1707,59 @@ input, select, textarea {
 /* Container */
 
 	.container {
-		margin: 0 auto;
-		max-width: calc(100% - 4.5em);
-		width: 45em;
+	    margin: 0 auto;
+	    max-width: calc(100% - 4.5em);
+	    width: 45em;
 	}
 
-		.container.xsmall {
-			width: 11.25em;
-		}
+	.container.xsmall {
+	    width: 11.25em;
+	}
 
-		.container.small {
-			width: 22.5em;
-		}
+	.container.small {
+	    width: 22.5em;
+	}
 
-		.container.medium {
-			width: 33.75em;
-		}
+	.container.medium {
+	    width: 33.75em;
+	}
 
-		.container.large {
-			width: 56.25em;
-		}
+	.container.large {
+	    width: 56.25em;
+	}
 
-		.container.xlarge {
-			width: 67.5em;
-		}
+	.container.xlarge {
+	    width: 67.5em;
+	}
 
-		.container.max {
-			width: 100%;
-		}
+	.container.max {
+	    width: 100%;
+	}
 
-		@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1024px) {
 
-			.container {
-				width: 100% !important;
-			}
+	    .container {
+	        width: 100% !important;
+	    }
 
-		}
+	}
 
-		@media screen and (max-width: 480px) {
+	@media screen and (max-width: 480px) {
 
-			.container {
-				max-width: calc(100% - 3.375em);
-			}
+	    .container {
+	        max-width: calc(100% - 3.375em);
+	    }
 
-		}
+	}
+
+	/* New rule to clear the float */
+
+	.container::after {
+	    content: "";
+	    display: table;
+	    clear: both;
+	}
+
 
 /* Section/Article */
 

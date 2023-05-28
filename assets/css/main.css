@@ -2210,7 +2210,6 @@ input, select, textarea {
 		.image.main {
 			display: block;
 			background-position: center;
-    		background-size: cover;
 			height: 20em;
 			border-radius: 0;
 		}

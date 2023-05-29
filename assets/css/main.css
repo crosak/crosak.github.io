@@ -3428,12 +3428,13 @@ input, select, textarea {
 
 	    .text-content {
 	        order: 1;
-	        flex: 3; /* take up 3 part of the space */
+	        flex: 5; /* take up 5 part of the space */
+	        padding:10px 0;
 	    }
 
 	    .image-content {
-	        order: 2;
-	        flex: 1; /* take up 1 parts of the space */
+	        order: 1;
+	        flex: 2; /* take up 2 parts of the space */
 	        padding:20px 0;
 	    }
 	}

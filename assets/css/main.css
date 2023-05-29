@@ -3339,7 +3339,7 @@ input, select, textarea {
 	  font-size: 0.4em; /* adjust this value to your liking */
 	  text-align: center;
 	  position: relative;
-	  z-index:1;
+	  z-index: 1; /* create a new stacking context */
 	}
 
 	.progress-bar li::before {
@@ -3350,11 +3350,20 @@ input, select, textarea {
 	  display: block;
 	  margin: 0 auto 10px auto;
 	  border-radius: 50%;
-	  background-color: #D9B310;
+	  background-color: #fff; /* color for uncompleted steps */
 	  transition: background-color 0.5s ease;
 	  z-index: 2; /* bring the bullet points to the front */
 	}
-	/* Line class for the progress bar */
+
+	.progress-bar li.completed::before {
+	  background-color: #328CC1; /* color for completed steps */
+	}
+
+	.progress-bar li.active::before {
+	  background-color: #D9B310; /* color for the active step */
+	  animation: pulse 2s infinite;
+	}
+
 	.line {
 	  position: absolute;
 	  width: 100%;
@@ -3372,16 +3381,6 @@ input, select, textarea {
 
 	.progress-bar li:last-child .line {
 	  width: 50%; /* remove the line from the right side of the last bullet point */
-	}
-
-
-	.progress-bar li.completed::before {
-	  background-color: #328CC1; /* color for completed steps */
-	}
-
-	.progress-bar li.active::before {
-	  background-color: #D9B310; /* color for the active step */
-	  animation: pulse 2s infinite;
 	}
 
 	@keyframes pulse {
@@ -3434,6 +3433,6 @@ input, select, textarea {
 	    .image-content {
 	        order: 2;
 	        flex: 2; /* take up 1 parts of the space */
-	        padding:5px 0;
+	        padding:10px 0;
 	    }
 	}

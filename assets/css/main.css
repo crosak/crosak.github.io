@@ -236,6 +236,11 @@ input, select, textarea {
 	.align-right {
 		text-align: right;
 	}
+/* Centered Text */
+	.centered-text {
+	    text-align: center;
+	    margin: 0 0 2.25em 0;
+	}
 
 /* Row */
 

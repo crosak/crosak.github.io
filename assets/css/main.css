@@ -131,6 +131,7 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2.25em 0;
+		text-align: justify;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -3371,7 +3372,7 @@ input, select, textarea {
 	  background-color: #000;
 	  top: 10px;
 	  left: 0;
-	  z-index: 0; /* place the line behind the bullet points */
+	  z-index: -1; /* place the line behind the bullet points */
 	}
 
 	.progress-bar li:first-child .line {

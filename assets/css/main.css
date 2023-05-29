@@ -3363,19 +3363,6 @@ input, select, textarea {
 	  animation: pulse 2s infinite;
 	}
 
-	.progress-bar li::after {
-	  content: '';
-	  position: absolute;
-	  width: 100%;
-	  height: 2px;
-	  background-color: #000; /* change this to the color you want for the line */
-	  top: 10px;
-	  left: 50%;
-	  transform: translateX(-50%);
-	  z-index: -1;
-	}
-
-
 	.progress-bar li:first-child::after {
 	  content: none;
 	}

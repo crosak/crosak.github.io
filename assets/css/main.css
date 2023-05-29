@@ -3332,6 +3332,29 @@ input, select, textarea {
 	  align-items: center;
 	}
 
+	.progress-bar li {
+	  background-color: #808080; /* Grey background for completed steps */
+	  color: #ffffff; /* White text for completed steps */
+	}
+
+	.progress-bar li.active {
+	  background-color: #ff0000; /* Red background for the active step */
+	  color: #ffffff; /* White text for the active step */
+	  animation: pulse 2s infinite; /* Makes the active step pulse */
+	}
+
+	@keyframes pulse {
+	  0% {
+	    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+	  }
+	  70% {
+	    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+	  }
+	  100% {
+	    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+	  }
+	}
+
 	.step {
 	  display: flex;
 	  flex-direction: column;

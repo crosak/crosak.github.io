@@ -3330,8 +3330,8 @@ input, select, textarea {
 	  display: flex;
 	  justify-content: space-between;
 	  list-style-type: none;
-	  padding: 20px 0; /* adjust this value to your liking */
-	  margin: 0;
+	  padding: 0;
+	  position: relative;
 	}
 
 	.progress-bar li {
@@ -3349,10 +3349,30 @@ input, select, textarea {
 	  display: block;
 	  margin: 0 auto 10px auto;
 	  border-radius: 50%;
-	  background-color: #fff; /* color for uncompleted steps */
+	  background-color: #D9B310;
 	  transition: background-color 0.5s ease;
-	  position: relative; 
+	  z-index: 2; /* bring the bullet points to the front */
 	}
+	/* Line class for the progress bar */
+	.line {
+	  position: absolute;
+	  width: 100%;
+	  height: 2px;
+	  background-color: #000;
+	  top: 10px;
+	  left: 0;
+	  z-index: 1; /* place the line behind the bullet points */
+	}
+
+	.progress-bar li:first-child .line {
+	  width: 50%; /* remove the line from the left side of the first bullet point */
+	  left: 50%;
+	}
+
+	.progress-bar li:last-child .line {
+	  width: 50%; /* remove the line from the right side of the last bullet point */
+	}
+
 
 	.progress-bar li.completed::before {
 	  background-color: #328CC1; /* color for completed steps */
@@ -3363,9 +3383,9 @@ input, select, textarea {
 	  animation: pulse 2s infinite;
 	}
 
-	.progress-bar li:first-child::after {
+	/*.progress-bar li:first-child::after {
 	  content: none;
-	}
+	}*/
 
 	@keyframes pulse {
 	  0% {
@@ -3388,19 +3408,7 @@ input, select, textarea {
 	  width: 100%;
 	}
 
-/* Line class for the progress bar */
-	.line {
-	  width: 100%;
-	  height: 2px;
-	  background: #000; /* change this to the color you want for the line */
-	  position: absolute;
-	  top: 10px;
-	  left: 50%;
-	  transform: translateX(-50%);
-	  z-index: -1;
-	}
 
-	}
 /* Flexible Layout Options */
 	.flex-container {
 	    display: flex;
@@ -3429,6 +3437,6 @@ input, select, textarea {
 	    .image-content {
 	        order: 2;
 	        flex: 2; /* take up 1 parts of the space */
-	        padding: 30px;
+	        padding: 20px;
 	    }
 	}

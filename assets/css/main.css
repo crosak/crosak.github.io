@@ -3349,10 +3349,19 @@ input, select, textarea {
 	  display: block;
 	  margin: 0 auto 10px auto;
 	  border-radius: 50%;
-	  background-color: #D9B310;
+	  background-color: #fff; /* color for uncompleted steps */
 	  transition: background-color 0.5s ease;
 	  z-index: 1; /* Add this line */
 	  position: relative; /* Add this line */
+	}
+
+	.progress-bar li.completed::before {
+	  background-color: #328CC1; /* color for completed steps */
+	}
+
+	.progress-bar li.active::before {
+	  background-color: #D9B310; /* color for the active step */
+	  animation: pulse 2s infinite;
 	}
 
 	.progress-bar li::after {
@@ -3367,18 +3376,8 @@ input, select, textarea {
 	  z-index: -1;
 	}
 
-
 	.progress-bar li:first-child::after {
 	  content: none;
-	}
-
-	.progress-bar li.completed::before {
-	  background-color: #328CC1;
-	}
-
-	.progress-bar li.active::before {
-	  background-color: #D9B310;
-	  animation: pulse 2s infinite;
 	}
 
 	@keyframes pulse {
@@ -3443,5 +3442,6 @@ input, select, textarea {
 	    .image-content {
 	        order: 2;
 	        flex: 2; /* take up 1 parts of the space */
+	        padding: 20px;
 	    }
 	}

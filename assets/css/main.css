@@ -3329,15 +3329,14 @@ input, select, textarea {
 	.progress-bar {
 	  display: flex;
 	  justify-content: space-between;
-	  align-items: center;
+	  list-style-type: none;
+	  padding: 0;
 	}
 
 	.progress-bar li {
 	  width: 20%;
-	  float: left;
-	  position: relative;
 	  text-align: center;
-	  list-style-type: none;
+	  position: relative;
 	}
 
 	.progress-bar li::before {
@@ -3388,28 +3387,15 @@ input, select, textarea {
 	  }
 	}
 
-
-	.step {
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
+	/* Position the text above the bullet */
+	.progress-bar li span {
+	  position: absolute;
+	  bottom: 30px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  width: 100%;
 	}
 
-	.bullet {
-	  width: 20px;
-	  height: 20px;
-	  border-radius: 50%;
-	  background: #DAF7A6; /* color for uncompleted steps */
-	}
-
-	.bullet.completed {
-	  background: #0B3C5D; /* color for completed steps */
-	}
-
-	.bullet.active {
-	  background: #D9B310; /* color for the active step */
-	  box-shadow: 0 0 5px 2px #D9B310; /* glowing effect */
-	}
 /* Projects */
 	.project {
 	  margin-bottom: 2em; /* Adds space between each project */

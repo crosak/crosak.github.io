@@ -3339,6 +3339,7 @@ input, select, textarea {
 	  font-size: 0.4em; /* adjust this value to your liking */
 	  text-align: center;
 	  position: relative;
+	  z-index:1;
 	}
 
 	.progress-bar li::before {
@@ -3361,7 +3362,7 @@ input, select, textarea {
 	  background-color: #000;
 	  top: 10px;
 	  left: 0;
-	  z-index: 1; /* place the line behind the bullet points */
+	  z-index: 0; /* place the line behind the bullet points */
 	}
 
 	.progress-bar li:first-child .line {
@@ -3382,10 +3383,6 @@ input, select, textarea {
 	  background-color: #D9B310; /* color for the active step */
 	  animation: pulse 2s infinite;
 	}
-
-	/*.progress-bar li:first-child::after {
-	  content: none;
-	}*/
 
 	@keyframes pulse {
 	  0% {
@@ -3437,5 +3434,6 @@ input, select, textarea {
 	    .image-content {
 	        order: 2;
 	        flex: 2; /* take up 1 parts of the space */
+	        padding:5px 0;
 	    }
 	}

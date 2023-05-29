@@ -3356,13 +3356,13 @@ input, select, textarea {
 	.progress-bar li::after {
 	  content: '';
 	  position: absolute;
-	  width: 100%;
+	  width: 80%;
 	  height: 2px;
 	  background-color: #000; /* change this to the color you want for the line */
 	  top: 10px;
-	  left: 50%;
-	  right: 50%;
-	  z-index: 1;
+	  left: 10%;
+	  right: 10%;
+	  z-index: -1;
 	}
 
 	.progress-bar li:first-child::after {
@@ -3434,11 +3434,11 @@ input, select, textarea {
 
 	    .text-content {
 	        order: 1;
-	        flex: 1; /* take up 1 part of the space */
+	        flex: 2; /* take up 1 part of the space */
 	    }
 
 	    .image-content {
 	        order: 2;
-	        flex: 1; /* take up 1 parts of the space */
+	        flex: 1; /* take up 0.5 parts of the space */
 	    }
 	}

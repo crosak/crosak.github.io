@@ -3330,7 +3330,7 @@ input, select, textarea {
 	  display: flex;
 	  justify-content: space-between;
 	  list-style-type: none;
-	  padding: 0;
+	  padding: 20px 0;
 	  position: relative;
 	}
 
@@ -3437,6 +3437,5 @@ input, select, textarea {
 	    .image-content {
 	        order: 2;
 	        flex: 2; /* take up 1 parts of the space */
-	        padding: 10px;
 	    }
 	}

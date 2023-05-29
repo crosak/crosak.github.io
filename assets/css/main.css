@@ -3437,6 +3437,6 @@ input, select, textarea {
 	    .image-content {
 	        order: 2;
 	        flex: 2; /* take up 1 parts of the space */
-	        padding: 20px;
+	        padding: 10px;
 	    }
 	}

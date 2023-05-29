@@ -3351,8 +3351,7 @@ input, select, textarea {
 	  border-radius: 50%;
 	  background-color: #fff; /* color for uncompleted steps */
 	  transition: background-color 0.5s ease;
-	  z-index: 1; /* Add this line */
-	  position: relative; /* Add this line */
+	  position: relative; 
 	}
 
 	.progress-bar li.completed::before {

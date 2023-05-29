@@ -3335,7 +3335,7 @@ input, select, textarea {
 
 	.progress-bar li {
 	  width: 20%;
-	  font-size: 0.7em; /* adjust this value to your liking */
+	  font-size: 0.4em; /* adjust this value to your liking */
 	  text-align: center;
 	  position: relative;
 	}
@@ -3348,7 +3348,7 @@ input, select, textarea {
 	  display: block;
 	  margin: 0 auto 10px auto;
 	  border-radius: 50%;
-	  background-color: #fff;
+	  background-color: #D9B310;
 	  transition: background-color 0.5s ease;
 	}
 
@@ -3413,7 +3413,8 @@ input, select, textarea {
 /* Flexible Layout Options */
 	.flex-container {
 	    display: flex;
-	    flex-wrap: wrap;
+	    flex-direction: column;
+	    align-items: center;
 	}
 
 	.text-content {
@@ -3424,13 +3425,16 @@ input, select, textarea {
 	    order: 2;
 	}
 
-	@media (min-width: 600px) {
+	@media (min-width: 768px) {
+	    .flex-container {
+	        flex-direction: row;
+	    }
+
 	    .text-content {
-	        order: 2;
+	        order: 1;
 	    }
 
 	    .image-content {
-	        order: 1;
+	        order: 2;
 	    }
 	}
-

@@ -3367,14 +3367,15 @@ input, select, textarea {
 	.progress-bar li::after {
 	  content: '';
 	  position: absolute;
-	  width: 80%;
+	  width: 100%;
 	  height: 2px;
 	  background-color: #000; /* change this to the color you want for the line */
 	  top: 10px;
-	  left: 10%;
-	  right: 10%;
+	  left: 50%;
+	  transform: translateX(-50%);
 	  z-index: -1;
 	}
+
 
 	.progress-bar li:first-child::after {
 	  content: none;
@@ -3442,6 +3443,6 @@ input, select, textarea {
 	    .image-content {
 	        order: 2;
 	        flex: 2; /* take up 1 parts of the space */
-	        padding: 20px;
+	        padding: 30px;
 	    }
 	}

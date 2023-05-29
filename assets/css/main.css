@@ -3349,8 +3349,10 @@ input, select, textarea {
 	  display: block;
 	  margin: 0 auto 10px auto;
 	  border-radius: 50%;
-	  background-color: #fff; /* change this to the color you want for the uncompleted steps */
+	  background-color: #D9B310;
 	  transition: background-color 0.5s ease;
+	  z-index: 1; /* Add this line */
+	  position: relative; /* Add this line */
 	}
 
 	.progress-bar li::after {
@@ -3360,8 +3362,8 @@ input, select, textarea {
 	  height: 2px;
 	  background-color: #000; /* change this to the color you want for the line */
 	  top: 10px;
-	  left: 10%;
-	  right: 10%;
+/*	  left: 10%;*/
+/*	  right: 10%;*/
 	  z-index: -1;
 	}
 

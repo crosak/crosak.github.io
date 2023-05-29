@@ -3330,8 +3330,8 @@ input, select, textarea {
 	  display: flex;
 	  justify-content: space-between;
 	  list-style-type: none;
-	  padding: 0;
-	  margin: 20px 0; /* adjust this value to your liking */
+	  padding: 20px 0; /* adjust this value to your liking */
+	  margin: 0;
 	}
 
 	.progress-bar li {
@@ -3361,7 +3361,7 @@ input, select, textarea {
 	  background-color: #D9B310;
 	  top: 10px;
 	  left: 0;
-	  z-index: -1;
+	  z-index: 1;
 	}
 
 	.progress-bar li:first-child::after {
@@ -3433,11 +3433,11 @@ input, select, textarea {
 
 	    .text-content {
 	        order: 1;
-	        flex: 1; /* take up remaining space */
+	        flex: 1; /* take up 1 part of the space */
 	    }
 
 	    .image-content {
 	        order: 2;
-	        flex: 2; /* take up twice the space of the text */
+	        flex: 2; /* take up 2 parts of the space */
 	    }
 	}

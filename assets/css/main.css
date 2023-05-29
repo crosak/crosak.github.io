@@ -3335,6 +3335,7 @@ input, select, textarea {
 
 	.progress-bar li {
 	  width: 20%;
+	  font-size: 0.7em; /* adjust this value to your liking */
 	  text-align: center;
 	  position: relative;
 	}
@@ -3356,7 +3357,7 @@ input, select, textarea {
 	  position: absolute;
 	  width: 100%;
 	  height: 2px;
-	  background-color: #328CC1;
+	  background-color: #D9B310;
 	  top: 10px;
 	  left: -50%;
 	  z-index: -1;
@@ -3409,3 +3410,27 @@ input, select, textarea {
 	  color: #2F4F4F; /* Dark green text for the project name */
 	  margin-bottom: 1em; /* Space between the project name and the progress bar */
 	}
+/* Flexible Layout Options */
+	.flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	}
+
+	.text-content {
+	    order: 1;
+	}
+
+	.image-content {
+	    order: 2;
+	}
+
+	@media (min-width: 600px) {
+	    .text-content {
+	        order: 2;
+	    }
+
+	    .image-content {
+	        order: 1;
+	    }
+	}
+

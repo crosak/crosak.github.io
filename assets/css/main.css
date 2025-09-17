@@ -3634,13 +3634,31 @@ canvas {
 .research-figure {
 	grid-column: 1 / -1;
 	margin: 0;
+	padding: 0.5rem;
+	/* space between border and image */
+	border: 1px solid #e2e2e2;
+	/* the frame */
+	border-radius: 10px;
+	background: #fff;
+	box-sizing: border-box;
+	/* keep width stable */
 	overflow: hidden;
+	/* clip inner corners */
 }
 
 .research-figure img {
 	width: 100%;
 	height: auto;
-	border-radius: 8px;
+	border-radius: 6px;
+	display: block;
+}
+
+/* Caption smaller than main text */
+.research-figure figcaption {
+	font-size: 0.875em;
+	line-height: 1.35;
+	color: #666;
+	margin-top: 0.45rem;
 }
 
 @media (max-width: 720px) {
@@ -3650,9 +3668,25 @@ canvas {
 }
 
 .research-text,
-.research-meta,
-figcaption {
-	overflow-wrap: anywhere;
+.research-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 1rem;
+	font-size: 0.95rem;
+	margin-top: 0.1rem;
+}
+
+@media (max-width: 520px) {
+	.research-meta {
+		gap: 0.5rem 1rem;
+	}
+
+	.research-meta .last-updated {
+		flex-basis: 100%;
+		margin-left: 0;
+		padding-left: 0;
+	}
 }
 
 /* Status badges */

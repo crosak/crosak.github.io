@@ -3604,47 +3604,46 @@ input[type="button"]:disabled,
 }
 
 /* Research project summary block */
+/* 1) Make all media responsive by default */
+img,
+svg,
+video,
+canvas {
+	max-width: 100%;
+	height: auto;
+	/* preserves aspect ratio */
+	display: block;
+	/* removes extra inline gaps */
+}
+
 .research-summary {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
 	gap: 1.25rem;
 	margin: 1rem 0 2rem;
-	padding: 1rem;
-	border: 1px solid #e6e6e6;
-	border-radius: 10px;
-	background: #fafafa;
 }
 
 .research-figure {
 	margin: 0;
+	overflow: hidden;
 }
 
 .research-figure img {
-	display: block;
 	width: 100%;
 	height: auto;
 	border-radius: 8px;
 }
 
-.research-figure figcaption {
-	font-size: 0.9rem;
-	color: #666;
-	margin-top: 0.5rem;
+@media (max-width: 720px) {
+	.research-summary {
+		grid-template-columns: 1fr;
+	}
 }
 
-.research-text p {
-	margin: 0 0 0.75rem;
-	line-height: 1.55;
-}
-
-/* Meta row: status + links */
-.research-meta {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.5rem 1rem;
-	font-size: 0.95rem;
-	margin-top: 0.25rem;
+.research-text,
+.research-meta,
+figcaption {
+	overflow-wrap: anywhere;
 }
 
 /* Status badges */

@@ -3655,7 +3655,7 @@ canvas {
 
 /* Caption smaller than main text */
 .research-figure figcaption {
-	font-size: 0.875em;
+	font-size: 0.6em;
 	line-height: 1.35;
 	color: #666;
 	margin-top: 0.45rem;

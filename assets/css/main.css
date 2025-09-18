@@ -3555,6 +3555,20 @@ input[type="button"]:disabled,
 	overflow-wrap: anywhere;
 }
 
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+	}
+
+	70% {
+		box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+	}
+}
+
 /* Keep your state colors */
 .progress-bar li.completed::before {
 	background: #328CC1;

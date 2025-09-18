@@ -3478,103 +3478,105 @@ input[type="button"]:disabled,
 
 }
 
-/* Progress Bar */
+/* --- Progress bar fixes: labels below, line behind dots, spacing restored --- */
+
+/* If you switched to the grid version, set step count once per bar: <ul class="progress-bar" style="--steps: 6"> */
 .progress-bar {
-	display: flex;
-	align-items: center;
+	--steps: 6;
+	/* fallback */
+	--dot: 20px;
+	--line: 2px;
+	display: grid;
+	grid-template-columns: repeat(var(--steps), 1fr);
+	align-items: start;
 	padding: 20px 0;
-	position: relative;
+	/* same as your original */
+	margin: 0;
+}
+
+/* Hide any old <div class="line"> if still in the markup */
+.progress-bar .line {
+	display: none !important;
 }
 
 .progress-bar li {
-	/* evenly spaced, any step count */
-	flex: 1 1 0;
-	/* allow shrinking */
-	min-width: 0;
-	/* scale text a bit on small screens */
-	font-size: clamp(0.65rem, 1.2vw, 0.9rem);
-	text-align: center;
 	position: relative;
+	min-width: 0;
+	text-align: center;
+	font-size: clamp(0.65rem, 1.2vw, 0.8rem);
 	list-style: none;
-	/* keep over the line */
-	z-index: 1;
 }
 
+/* DOT: sits above the connector, white fill hides the line underneath */
 .progress-bar li::before {
 	content: '';
-	width: 20px;
-	height: 20px;
-	border: 2px solid #000;
-	display: block;
-	margin: 0 auto 10px auto;
-	border-radius: 50%;
-	background-color: #fff;
-	/* color for uncompleted steps */
-	transition: background-color 0.5s ease;
-	/* bring the bullet points to the front */
-	z-index: 2;
-}
-
-.progress-bar li.completed::before {
-	/* color for completed steps */
-	background-color: #328CC1;
-}
-
-.progress-bar li.active::before {
-	/* color for the active step */
-	background-color: #D9B310;
-	animation: pulse 2s infinite;
-}
-
-.line {
 	position: absolute;
-	width: 100%;
-	height: 2px;
-	background-color: #000;
-	top: 10px;
-	left: 0;
-	/* place the line behind the bullet points */
-	z-index: -1;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: var(--dot);
+	height: var(--dot);
+	border: 2px solid #000;
+	border-radius: 50%;
+	background: #fff;
+	z-index: 2;
+	/* above the connector */
 }
 
-.progress-bar li:first-child .line {
-	width: 50%;
-	/* remove the line from the left side of the first bullet point */
+/* CONNECTOR: runs through dot center but *under* the dot */
+.progress-bar li::after {
+	content: '';
+	position: absolute;
+	top: calc(var(--dot)/2 - var(--line)/2);
+	left: 0;
+	right: 0;
+	height: var(--line);
+	background: #000;
+	z-index: 1;
+	/* below the dot */
+}
+
+/* Trim ends so the line starts/ends at dot centers */
+.progress-bar li:first-child::after {
 	left: 50%;
 }
 
-.progress-bar li:last-child .line {
-	width: 50%;
-	/* remove the line from the right side of the last bullet point */
+.progress-bar li:last-child::after {
+	right: 50%;
 }
 
-@keyframes pulse {
-	0% {
-		box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-	}
-
-	70% {
-		box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-	}
-
-	100% {
-		box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
-	}
-}
-
-/* Position the text above the bullet */
+/* LABELS: keep them BELOW the dots on all screens */
 .progress-bar li span {
 	position: static;
-	bottom: auto;
-	left: auto;
-	transform: none;
-	width: 100%;
 	display: block;
-	margin-top: 8px;
+	margin-top: calc(var(--dot) + 10px);
+	/* push label under the dot */
 	line-height: 1.2;
 	overflow-wrap: anywhere;
 }
 
+/* Keep your state colors */
+.progress-bar li.completed::before {
+	background: #328CC1;
+}
+
+.progress-bar li.active::before {
+	background: #D9B310;
+	animation: pulse 2s infinite;
+}
+
+/* Do NOT move labels above on desktop; override any previous rule that did */
+@media (min-width: 900px) {
+	.progress-bar li span {
+		position: static !important;
+		margin-top: calc(var(--dot) + 10px) !important;
+		transform: none !important;
+		white-space: normal;
+		overflow: visible;
+		-webkit-line-clamp: unset;
+		-webkit-box-orient: unset;
+	}
+}
 
 /* Flexible Layout Options */
 .flex-container {

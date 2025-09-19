@@ -3478,19 +3478,16 @@ input[type="button"]:disabled,
 
 }
 
-/* --- Progress bar fixes: labels below, line behind dots, spacing restored --- */
-
 /* If you switched to the grid version, set step count once per bar: <ul class="progress-bar" style="--steps: 6"> */
 .progress-bar {
-	--steps: 6;
 	/* fallback */
+	--steps: 6;
 	--dot: 20px;
 	--line: 2px;
 	display: grid;
 	grid-template-columns: repeat(var(--steps), 1fr);
 	align-items: start;
 	padding: 20px 0;
-	/* same as your original */
 	margin: 0;
 }
 
@@ -3601,6 +3598,44 @@ input[type="button"]:disabled,
 		hyphens: auto;
 		-webkit-line-clamp: unset;
 		-webkit-box-orient: unset;
+	}
+}
+
+/* Mobile: give each step a minimum width and allow horizontal scroll */
+@media (max-width: 520px) {
+	.progress-bar {
+		/* Each column is at least ~12 characters wide; if total width exceeds the viewport, it scrolls */
+		grid-template-columns: repeat(var(--steps), minmax(12ch, 1fr));
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		/* smooth touch scroll */
+		scrollbar-width: thin;
+		/* Firefox */
+		padding-bottom: 12px;
+		/* room for the scrollbar */
+		scroll-snap-type: x proximity;
+		/* optional nicety */
+	}
+
+	.progress-bar li {
+		padding: 0 4px;
+		/* a bit of breathing room per cell */
+		scroll-snap-align: center;
+		/* optional nicety */
+	}
+
+	/* Keep labels readable: don't break inside words */
+	.progress-bar li span {
+		white-space: normal;
+		word-break: keep-all;
+		/* never split inside words */
+		overflow-wrap: normal;
+		/* no emergency mid-word breaks */
+		hyphens: auto;
+		/* allow proper hyphenation when needed */
+		font-size: 0.75rem;
+		/* slightly smaller label on mobile */
+		line-height: 1.25;
 	}
 }
 

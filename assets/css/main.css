@@ -3552,7 +3552,13 @@ input[type="button"]:disabled,
 	margin-top: calc(var(--dot) + 10px);
 	/* push label under the dot */
 	line-height: 1.2;
-	overflow-wrap: anywhere;
+	white-space: normal;
+	/* never split inside words */
+	word-break: keep-all;
+	/* only break if a token is too long */
+	overflow-wrap: break-word;
+	/* no auto-hyphenation */
+	hyphens: auto;
 }
 
 @keyframes pulse {
@@ -3586,7 +3592,13 @@ input[type="button"]:disabled,
 		margin-top: calc(var(--dot) + 10px) !important;
 		transform: none !important;
 		white-space: normal;
-		overflow: visible;
+		/* overflow: visible; */
+		/* never split inside words */
+		word-break: keep-all;
+		/* only break if a token is too long */
+		overflow-wrap: break-word;
+		/* no auto-hyphenation */
+		hyphens: auto;
 		-webkit-line-clamp: unset;
 		-webkit-box-orient: unset;
 	}
@@ -3675,6 +3687,7 @@ canvas {
 	line-height: 1.35;
 	color: #666;
 	margin-top: 0.45rem;
+
 }
 
 @media (max-width: 720px) {
@@ -3691,6 +3704,8 @@ canvas {
 	gap: 0.5rem 1rem;
 	font-size: 0.95rem;
 	margin-top: 0.1rem;
+	word-break: normal;
+	hyphens: none;
 }
 
 @media (max-width: 520px) {

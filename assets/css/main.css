@@ -3835,7 +3835,7 @@ canvas {
 
 /* Chevron indicator */
 .project>summary::after {
-	content: "▸";
+	content: "Expand ▸ ";
 	position: absolute;
 	right: 0.9rem;
 	/* tweak if needed based on your h4 size */
@@ -3845,7 +3845,8 @@ canvas {
 }
 
 .project[open]>summary::after {
-	transform: rotate(90deg);
+	content: "Collapse ▾";
+	/* transform: rotate(90deg); */
 }
 
 /* Tidy the title spacing */

@@ -3883,3 +3883,37 @@ canvas {
 	outline: 2px solid #328CC1;
 	outline-offset: 2px;
 }
+
+/* 1) Reserve space on the right for the arrow+label */
+.project > summary {
+  padding-right: 5rem;          /* gives the label its own lane */
+}
+
+/* 2) Arrow + label, kept on one line */
+.project > summary::after {
+  content: "▸  Expand";           /* keep your style */
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  white-space: nowrap;            /* no wrap -> no overlap */
+  color: #555;
+}
+
+/* 3) Flip when open */
+.project[open] > summary::after {
+  content: "▾  Collapse";
+}
+
+/* 4) Let the title wrap naturally; it won't run under the label because of the padding-right */
+.project > summary h4 {
+  margin: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* 5) Very small phones: arrow-only + smaller reserved space */
+@media (max-width: 380px) {
+  .project > summary { padding-right: 2.75rem; }
+  .project > summary::after { content: "▸"; }
+  .project[open] > summary::after { content: "▾"; }
+}
